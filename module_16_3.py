@@ -24,6 +24,7 @@ async def update_message(user_name: Annotated[str, Path(min_length=5, max_length
     users[user_id] = f"Имя: {user_name}, возраст: {age}"
     return {"message": f"The user {user_id} is updated"}
 
+
 @app.delete("/user/{user_id}")
 async def delete_user(user_id: str = Path(...)):
     if user_id in users:
